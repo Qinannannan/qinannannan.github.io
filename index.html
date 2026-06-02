@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的可爱小窝 🌸</title>
+    <title>我的个人简介 🌸</title>
     <style>
         /* 全局可爱风 */
         * {
@@ -25,14 +25,25 @@
             position: relative;
             z-index: 2;
         }
+        /* 标题弹跳动画 */
+        @keyframes bounceIn {
+            0%{transform: translateY(-30px);opacity:0;}
+            100%{transform: translateY(0);opacity:1;}
+        }
         h1 {
             text-align: center;
             color: #ff7b9c;
             margin: 20px 0;
             font-size: 28px;
             text-shadow: 1px 1px 3px #ffd6e0;
+            animation: bounceIn 1s ease;
         }
-        /* 可爱卡片 */
+        /* 卡片悬浮+呼吸渐变 */
+        @keyframes breathe {
+            0%{box-shadow: 0 4px 12px rgba(255, 123, 156, 0.15);}
+            50%{box-shadow: 0 4px 20px rgba(255, 123, 156, 0.35);}
+            100%{box-shadow: 0 4px 12px rgba(255, 123, 156, 0.15);}
+        }
         .card {
             background: #fff;
             border-radius: 20px;
@@ -41,6 +52,7 @@
             box-shadow: 0 4px 12px rgba(255, 123, 156, 0.15);
             border: 2px solid #ffe6ee;
             transition: transform 0.3s ease;
+            animation: breathe 4s infinite ease-in-out;
         }
         .card:hover {
             transform: translateY(-5px);
@@ -56,19 +68,16 @@
             line-height: 1.7;
             margin: 10px 0;
         }
-        /* 图片样式：圆润+阴影 */
         img {
             max-width: 100%;
             border-radius: 16px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             margin: 12px 0;
         }
-        /* 小装饰 */
         .emoji {
             margin-right: 6px;
         }
-
-        /* 闪烁星星背景 */
+        /* 闪烁星星 */
         .star {
             position: fixed;
             top: 0;
@@ -82,7 +91,6 @@
             0%,100% { opacity: 0.3; transform: scale(0.8); }
             50% { opacity: 1; transform: scale(1.2); }
         }
-
         /* 樱花飘落 */
         .petal {
             position: fixed;
@@ -94,79 +102,88 @@
             z-index: 1;
         }
         @keyframes fall {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
+            0% {transform: translateY(0) rotate(0deg);opacity: 0.8;}
+            100% {transform: translateY(100vh) rotate(360deg);opacity: 0;}
+        }
+        /* 点击弹出小表情 */
+        .click-item{
+            position:fixed;
+            pointer-events:none;
+            animation: popUp 1s forwards;
+            font-size:22px;
+            z-index:999;
+        }
+        @keyframes popUp{
+            0%{transform:translateY(0);opacity:1;}
+            100%{transform:translateY(-80px);opacity:0;}
+        }
+        /* 鼠标跟随爱心 */
+        .follow-heart{
+            position:fixed;
+            pointer-events:none;
+            color:#ff7b9c;
+            font-size:18px;
+            z-index:999;
         }
     </style>
 </head>
 <body>
-    <!-- 星星背景 -->
-    <div class="star">✨</div>
-    <div class="star">✨</div>
-    <div class="star">✨</div>
-    <div class="star">✨</div>
-    <div class="star">✨</div>
-    <div class="star">✨</div>
-    <div class="star">✨</div>
-    <div class="star">✨</div>
-    <div class="star">✨</div>
-    <div class="star">✨</div>
-
-    <!-- 樱花花瓣 -->
-    <div class="petal">🌸</div>
-    <div class="petal">🌸</div>
-    <div class="petal">🌸</div>
-    <div class="petal">🌸</div>
-    <div class="petal">🌸</div>
-    <div class="petal">🌸</div>
-    <div class="petal">🌸</div>
-    <div class="petal">🌸</div>
+    <!-- 星星 -->
+    <div class="star">✨</div><div class="star">✨</div><div class="star">✨</div><div class="star">✨</div>
+    <div class="star">✨</div><div class="star">✨</div><div class="star">✨</div><div class="star">✨</div>
+    <!-- 樱花 -->
+    <div class="petal">🌸</div><div class="petal">🌸</div><div class="petal">🌸</div><div class="petal">🌸</div>
+    <div class="petal">🌸</div><div class="petal">🌸</div><div class="petal">🌸</div><div class="petal">🌸</div>
 
     <div class="container">
         <h1>🌸 欢迎来到我的个人主页 🌸</h1>
-
-        <!-- 关于我 -->
         <div class="card">
             <h2><span class="emoji">✨</span>关于我</h2>
             <p>你好呀～我是田雪滢，是一个热爱生活、喜欢记录日常的人～</p>
             <img src="self.jpg" alt="个人照片">
         </div>
-
-        <!-- 兴趣爱好 -->
         <div class="card">
             <h2><span class="emoji">🎨</span>兴趣爱好</h2>
-
             <p>喜欢画画 ✏️</p>
             <img src="hobby2.png" alt="画画图片">
-
-            <p>除了画画，我还喜欢拍照和cosplay，以及吃好吃的美食~生活里的小美好都想收集起来 💖</p>
+            <p>除了画画，我还喜欢拍照和cosplay～生活里的小美好都想收集起来 💖</p>
             <img src="hobby1.jpg" alt="爱好图片">
         </div>
-
     </div>
 
-    <script>
-        // 随机位置 + 随机动画时长（星星）
-        const stars = document.querySelectorAll('.star');
-        stars.forEach(star => {
-            star.style.left = Math.random() * 100 + 'vw';
-            star.style.animationDelay = Math.random() * 2 + 's';
-            star.style.fontSize = (Math.random() * 10 + 8) + 'px';
-        });
+<script>
+// 随机星星花瓣
+const stars = document.querySelectorAll('.star');
+stars.forEach(s=>{s.style.left=Math.random()*100+'vw';s.style.animationDelay=Math.random()*2+'s';s.style.fontSize=Math.random()*10+8+'px'})
+const petals = document.querySelectorAll('.petal');
+petals.forEach(p=>{p.style.left=Math.random()*100+'vw';p.style.animationDuration=Math.random()*5+5+'s';p.style.fontSize=Math.random()*10+15+'px'})
 
-        // 随机位置 + 随机下落速度（花瓣）
-        const petals = document.querySelectorAll('.petal');
-        petals.forEach(petal => {
-            petal.style.left = Math.random() * 100 + 'vw';
-            petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
-            petal.style.fontSize = (Math.random() * 10 + 15) + 'px';
-        });
-    </script>
+// 1.点击页面弹出表情
+const iconList = ['🍭','🍬','💖','✨','🍓','🎀','🧁'];
+document.body.addEventListener('click',e=>{
+    let d = document.createElement('div');
+    d.className='click-item';
+    d.innerText=iconList[Math.floor(Math.random()*iconList.length)];
+    d.style.left=e.clientX+'px';d.style.top=e.clientY+'px';
+    document.body.appendChild(d);
+    setTimeout(()=>d.remove(),1000);
+})
+
+//2.鼠标跟随爱心
+let heartArr=[];
+document.body.addEventListener('mousemove',e=>{
+    let d = document.createElement('div');
+    d.className='follow-heart';
+    d.innerText='♥';
+    d.style.left=e.clientX+'px';d.style.top=e.clientY+'px';
+    document.body.appendChild(d);
+    heartArr.push(d);
+    if(heartArr.length>15){
+        let old=heartArr.shift();
+        old.style.opacity=0;
+        setTimeout(()=>old.remove(),300);
+    }
+})
+</script>
 </body>
 </html>
