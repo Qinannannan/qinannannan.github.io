@@ -3,125 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>田雪滢的个人主页</title>
+    <title>我的可爱小窝 🌸</title>
     <style>
-        :root {
-            --primary: #409eff;
-            --light: #f5f7fa;
-            --card: #ffffff;
-            --text: #333333;
-            --gray: #666666;
-        }
+        /* 全局可爱风 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.7;
+            font-family: "Microsoft YaHei", "Comic Sans MS", cursive;
+            background: linear-gradient(120deg, #fff0f6, #f0f9ff);
+            color: #444;
             padding: 20px;
+            position: relative;
+            overflow-x: hidden;
         }
         .container {
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
-        header {
-            background: linear-gradient(135deg, var(--primary), #66b1ff);
-            color: white;
+        h1 {
             text-align: center;
-            padding: 40px 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(64,158,255,0.2);
-            margin-bottom: 24px;
+            color: #ff7b9c;
+            margin: 20px 0;
+            font-size: 28px;
+            text-shadow: 1px 1px 3px #ffd6e0;
         }
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
-        }
+        /* 可爱卡片 */
         .card {
-            background: var(--card);
-            padding: 28px;
-            border-radius: 16px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            margin-bottom: 24px;
-            transition: transform 0.2s ease;
+            background: #fff;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(255, 123, 156, 0.15);
+            border: 2px solid #ffe6ee;
+            transition: transform 0.3s ease;
         }
         .card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
         }
-        .card h2 {
-            color: var(--primary);
-            margin-bottom: 16px;
-            border-left: 4px solid var(--primary);
-            padding-left: 12px;
+        h2 {
+            color: #ff87ab;
+            margin-bottom: 15px;
+            font-size: 22px;
+            border-bottom: 2px dotted #ffc9d8;
+            padding-bottom: 5px;
         }
-        ul {
-            padding-left: 24px;
+        p {
+            line-height: 1.7;
+            margin: 10px 0;
         }
-        .img-box {
-            text-align: center;
-            margin: 16px 0;
-        }
-        .img-box img {
+        /* 图片样式：圆润+阴影 */
+        img {
             max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin: 12px 0;
         }
-        footer {
-            text-align: center;
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-top: 30px;
-            padding: 20px 0;
+        /* 小装饰 */
+        .emoji {
+            margin-right: 6px;
         }
-        @media (max-width: 600px) {
-            header h1 {font-size: 1.8rem;}
-            .card {padding: 20px;}
+
+        /* 闪烁星星背景 */
+        .star {
+            position: fixed;
+            top: 0;
+            color: #ffd700;
+            font-size: 12px;
+            animation: twinkle 2s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 1;
+        }
+        @keyframes twinkle {
+            0%,100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* 樱花飘落 */
+        .petal {
+            position: fixed;
+            top: -10px;
+            color: #ffc0cb;
+            font-size: 18px;
+            animation: fall linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- 星星背景 -->
+    <div class="star">✨</div>
+    <div class="star">✨</div>
+    <div class="star">✨</div>
+    <div class="star">✨</div>
+    <div class="star">✨</div>
+    <div class="star">✨</div>
+    <div class="star">✨</div>
+    <div class="star">✨</div>
+    <div class="star">✨</div>
+    <div class="star">✨</div>
+
+    <!-- 樱花花瓣 -->
+    <div class="petal">🌸</div>
+    <div class="petal">🌸</div>
+    <div class="petal">🌸</div>
+    <div class="petal">🌸</div>
+    <div class="petal">🌸</div>
+    <div class="petal">🌸</div>
+    <div class="petal">🌸</div>
+    <div class="petal">🌸</div>
+
     <div class="container">
-        <header>
-            <h1>你好，我是田雪滢 👋</h1>
-            <p>欢迎来到我的个人主页 | GitHub Pages 作业</p>
-        </header>
+        <h1>🌸 欢迎来到我的个人主页 🌸</h1>
 
-        <section class="card">
-            <h2>关于我</h2>
-            <div class="img-box">
-                <!-- 第一张：你的小红书笔记图片（咸鱼茄子煲） -->
-                <img src="https://sns-img-hw.xhscdn.com/sns/2b1429a34f34450481512405310410a1~tplv-xh-226x224.jpeg" alt="美食照片" width="350">
-            </div>
-            <p>大家好，我是田雪滢，一名在读研究生。喜欢学习新东西，热爱生活，认真对待每一件事。</p>
-        </section>
+        <!-- 关于我 -->
+        <div class="card">
+            <h2><span class="emoji">✨</span>关于我</h2>
+            <p>你好呀～我是田雪滢，是一个热爱生活、喜欢记录日常的人～</p>
+            <img src="self.jpg" alt="个人照片">
+        </div>
 
-        <section class="card">
-            <h2>我的兴趣爱好</h2>
-            <ul>
-                <li>喜欢画画</li>
-                <li>偶尔跳一下舞</li>
-                <li>阅读、旅行、摄影、美食</li>
-            </ul>
-            <div class="img-box">
-                <!-- 第二张：你的另一张小红书笔记图片 -->
-                <img src="https://sns-img-hw.xhscdn.com/sns/1b85730908e942378510f2105212305~tplv-xh-226x224.jpeg" alt="生活日常" width="400">
-            </div>
-        </section>
+        <!-- 兴趣爱好 -->
+        <div class="card">
+            <h2><span class="emoji">🎨</span>兴趣爱好</h2>
 
-        <section class="card">
-            <h2>联系方式</h2>
-            <p>邮箱：1583784889@qq.com</p>
-            <p>GitHub：qinannannan</p>
-        </section>
+            <p>喜欢画画 ✏️</p>
+            <img src="hobby2.png" alt="画画图片">
 
-        <footer>
-            &copy; 2026 田雪滢 | 用 GitHub Pages 制作
-        </footer>
+            <p>除了画画，我还喜欢拍照和cosplay，以及吃好吃的美食~生活里的小美好都想收集起来 💖</p>
+            <img src="hobby1.jpg" alt="爱好图片">
+        </div>
+
     </div>
+
+    <script>
+        // 随机位置 + 随机动画时长（星星）
+        const stars = document.querySelectorAll('.star');
+        stars.forEach(star => {
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.animationDelay = Math.random() * 2 + 's';
+            star.style.fontSize = (Math.random() * 10 + 8) + 'px';
+        });
+
+        // 随机位置 + 随机下落速度（花瓣）
+        const petals = document.querySelectorAll('.petal');
+        petals.forEach(petal => {
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            petal.style.fontSize = (Math.random() * 10 + 15) + 'px';
+        });
+    </script>
 </body>
 </html>
